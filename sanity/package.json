@@ -2,7 +2,7 @@
   "name": "ncds",
   "private": true,
   "version": "3.0.0",
-  "description": "Sanity Content Studio",
+  "description": "Backend for NCDS",
   "main": "package.json",
   "author": "Jana Rajakumar <jana.stc@gmail.com>",
   "license": "UNLICENSED",
@@ -32,6 +32,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jana-uoft/ncds_v3.git"
+    "url": "https://github.com/jana-uoft/ncds_v3"
+  },
+  "bugs": {
+    "url": "https://github.com/jana-uoft/ncds_v3/issues"
   }
 }
