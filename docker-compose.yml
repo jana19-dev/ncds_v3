@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  sanity:
+    image: node:12
+    working_dir: /app
+    volumes:
+      - ./sanity/:/app
+    user: 1000:1000
+    command: bash -c "yarn && yarn start"
+    env_file:
+      - .env
+    ports:
+      - 127.0.0.1:3333:3333
+
+  gatsby:
+    image: node:12
+    working_dir: /app
+    volumes:
+      - ./gatsby/:/app
+    user: 1000:1000
+    command: bash -c "yarn && yarn start"
+    env_file:
+      - .env
+    ports:
+      - 127.0.0.1:8000:8000
