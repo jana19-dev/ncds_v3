@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from 'styled-components'
 
 import Header from './header'
 import Seo from '../components/seo'
@@ -12,12 +11,9 @@ const Layout = ({ title, children }) => {
     <>
       <Seo title={title} />
       <ThemeProvider theme={theme}>
-        <CssBaseline />
         <Header title={title} />
-        <div>
-          <main>{children}</main>
-          <footer />
-        </div>
+        <main>{children}</main>
+        <footer />
       </ThemeProvider>
     </>
   )

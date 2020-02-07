@@ -2,6 +2,12 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Location } from '@reach/router'
+import styled from 'styled-components'
+
+const StyledHeader = styled.header`
+  padding: 4em;
+  background: ${({ theme, colorMode }) => theme[colorMode].main};
+`
 
 const Header = ({ title }) => {
   const data = useStaticQuery(graphql`
@@ -19,7 +25,7 @@ const Header = ({ title }) => {
       {({ location }) => {
         console.log(location)
         return (
-          <header>
+          <StyledHeader colorMode='light'>
             <div>
               <h1>
                 <Link to='/'>
@@ -27,7 +33,7 @@ const Header = ({ title }) => {
                 </Link>
               </h1>
             </div>
-          </header>
+          </StyledHeader>
         )
       }}
     </Location>
