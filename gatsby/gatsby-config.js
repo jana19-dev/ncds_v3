@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: 'https://nainativucds.org'
   },
   plugins: [
+    'gatsby-plugin-material-ui',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
