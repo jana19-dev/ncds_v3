@@ -6,10 +6,10 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.header`
   padding: 4em;
-  background: ${({ theme, colorMode }) => theme[colorMode].main};
+  background: ${props => props.theme.main};
 `
 
-const Header = ({ title }) => {
+const Header = ({ title, toggleDarkMode }) => {
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
@@ -25,7 +25,10 @@ const Header = ({ title }) => {
       {({ location }) => {
         console.log(location)
         return (
-          <StyledHeader colorMode='light'>
+          <StyledHeader>
+            <button onClick={toggleDarkMode}>
+              Toggle Dark Mode
+            </button>
             <div>
               <h1>
                 <Link to='/'>
