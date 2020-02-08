@@ -7,7 +7,7 @@ export default () => {
     query {
       placeholderImage: file(relativePath: { eq: "footer.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
           }
         }

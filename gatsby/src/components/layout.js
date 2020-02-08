@@ -4,6 +4,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import Header from './header'
 import Seo from '../components/seo'
+import Footer from './footer'
 import theme from '../utils/theme'
 
 const GlobalStyle = createGlobalStyle`
@@ -28,8 +29,8 @@ const Layout = ({ title, children }) => {
       <GlobalStyle />
       <Seo title={title} />
       <Header title={title} toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      <main>{children}</main>
-      <footer />
+      <main style={{ minHeight: '80vh' }}>{children}</main>
+      <Footer />
     </ThemeProvider>
   )
 }
