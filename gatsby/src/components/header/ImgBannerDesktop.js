@@ -7,7 +7,7 @@ export default () => {
     query {
       placeholderImage: file(relativePath: { eq: "banner_desktop.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid
           }
         }
