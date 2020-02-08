@@ -6,7 +6,6 @@ import Responsive from '../_common/Responsive'
 import DesktopTopBar from './styled/DesktopTopBar'
 import MobileTopBar from './styled/MobileTopBar'
 import MobileSideBar from './styled/MobileSideBar'
-import MobileSideBarToggleButton from './styled/MobileSideBarToggleButton'
 import DarkModeToggleButton from './styled/DarkModeToggleButton'
 import NavLinkItem from './styled/NavLinkItem'
 
@@ -69,9 +68,9 @@ const Header = ({ title, toggleDarkMode, isDarkMode }) => {
             </DesktopTopBar>
 
             <MobileTopBar>
-              <MobileSideBarToggleButton onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
+              <button onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
                 <i className='fas fa-bars' />
-              </MobileSideBarToggleButton>
+              </button>
               <h1>{title}</h1>
             </MobileTopBar>
 

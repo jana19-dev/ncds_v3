@@ -23,4 +23,12 @@ export default styled.div`
     font-weight: 100;
     padding-right: 20px;
   }
+  button {
+    color: ${props => props.theme.palette.primary};
+    background: none;
+    border: none;
+    font-size: larger;
+    justify-self: left;
+    padding-left: 20px;
+  }
 `
