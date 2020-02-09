@@ -18,6 +18,15 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: '8crwkfsj',
+        dataset: 'production',
+        token: process.env.SANITY_TOKEN,
+        watchMode: false
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'ncds',
