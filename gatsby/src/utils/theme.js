@@ -5,7 +5,7 @@ export default {
       secondary: '#add2c9'
     },
     text: {
-      primary: '#488b8f',
+      primary: '#343434',
       secondary: '#5ea3a3'
     }
   },
@@ -15,7 +15,7 @@ export default {
       secondary: '#055e68'
     },
     text: {
-      primary: '#b9d2d2',
+      primary: '#faf9f9',
       secondary: '#62a388'
     }
   }

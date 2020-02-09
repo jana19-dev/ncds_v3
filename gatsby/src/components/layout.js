@@ -11,7 +11,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0px;
     background: ${props => props.theme.background.primary};
-    color: ${props => props.theme.text.primary}
+    color: ${props => props.theme.text.primary};
+    main {
+      min-height: 80vh;
+      padding: 20px;
+    }
   }
 `
 
@@ -26,11 +30,11 @@ const Layout = ({ title, children }) => {
   }
 
   return (
-    <ThemeProvider theme={isDarkMode ? theme.dark : theme.light}>
+    <ThemeProvider theme={isDarkMode ? theme.dark : theme.light} isDarkMode>
       <GlobalStyle />
       <Seo title={title} />
       <Header title={title} toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      <main style={{ minHeight: '80vh' }}>{children}</main>
+      <main>{children}</main>
       <Footer />
     </ThemeProvider>
   )
