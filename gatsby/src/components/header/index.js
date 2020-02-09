@@ -9,6 +9,10 @@ import MobileSideBar from './styled/MobileSideBar'
 import DarkModeToggleButton from './styled/DarkModeToggleButton'
 import NavLinkItem from './styled/NavLinkItem'
 
+import { Sun as SunIcon } from 'styled-icons/boxicons-solid/Sun'
+import { Moon as MoonIcon } from 'styled-icons/boxicons-solid/Moon'
+import { Menu as MenuIcon } from 'styled-icons/boxicons-regular/Menu'
+
 import ImageBannerDesktop from './images/ImgBannerDesktop'
 import ImageBannerMobile from './images/ImgBannerMobile'
 import ImageLogo from './images/ImgLogo'
@@ -57,7 +61,7 @@ const Header = ({ title, toggleDarkMode, isDarkMode }) => {
         return (
           <header>
             <DarkModeToggleButton onClick={toggleDarkMode}>
-              <i className={isDarkMode ? 'fas fa-moon' : 'fas fa-sun'} />
+              {isDarkMode ? <MoonIcon size={23} /> : <SunIcon size={23} />}
             </DarkModeToggleButton>
 
             <Responsive desktop> <ImageBannerDesktop /> </Responsive>
@@ -69,7 +73,7 @@ const Header = ({ title, toggleDarkMode, isDarkMode }) => {
 
             <MobileTopBar>
               <button onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
-                <i className='fas fa-bars' />
+                <MenuIcon size={25} />
               </button>
               <h1>{title}</h1>
             </MobileTopBar>

@@ -67,10 +67,6 @@ const Seo = ({ description, lang, meta, title }) => {
         href='https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap'
         rel='stylesheet'
       />
-      <link
-        href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'
-        rel='stylesheet'
-      />
     </Helmet>
   )
 }
