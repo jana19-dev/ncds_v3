@@ -10,7 +10,8 @@ import theme from '../utils/theme'
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0px;
-    color: ${props => props.theme.palette.primary}
+    background: ${props => props.theme.background.primary};
+    color: ${props => props.theme.text.primary}
   }
 `
 

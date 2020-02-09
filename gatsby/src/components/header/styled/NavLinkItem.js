@@ -11,7 +11,7 @@ export default styled(Link)`
   color: inherit;
   outline: none;
   &:hover, &:focus {
-    background: ${props => props.theme.palette.secondary};
+    background: #055e68;
   }
   transition-property: background;
   transition-duration: 0.3s;

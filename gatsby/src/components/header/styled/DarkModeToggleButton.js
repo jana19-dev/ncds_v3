@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default styled.button`
-  color: ${props => props.theme.palette.primary};
+  color: ${props => props.theme.text.secondary};
   background: none;
   border: none;
   font-size: larger;

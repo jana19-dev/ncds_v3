@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  background: ${props => props.theme.palette.background};
-  color: ${props => props.theme.palette.primary};
+  background: #0d2a31;
+  color: #ffffff;
   display: grid;
   grid-template-columns: auto 1fr;
   justify-items: center;
@@ -24,7 +24,7 @@ export default styled.div`
     padding-right: 20px;
   }
   button {
-    color: ${props => props.theme.palette.primary};
+    color: #ffffff;
     background: none;
     border: none;
     font-size: larger;

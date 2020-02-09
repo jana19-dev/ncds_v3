@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  background: ${props => props.theme.palette.background};
+  background: #0d2a31;
   .active {
-    background: ${props => props.theme.palette.secondary};
+    background: #055e68;
   }
-  color: ${props => props.theme.palette.primary};
+  color: #ffffff;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   justify-items: center;

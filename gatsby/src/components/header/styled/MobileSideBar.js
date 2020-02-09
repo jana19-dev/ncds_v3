@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  background: ${props => props.theme.palette.background};
-  color: ${props => props.theme.palette.primary};
+  background: #0d2a31;
+  color: #ffffff;
   opacity: ${props => props.open ? 1 : 0};
   visibility: ${props => props.open ? 'visible' : 'hidden'};
   width: ${props => props.open ? '300px' : '0px'};
@@ -32,7 +32,7 @@ export default styled.div`
     height: 80vh;
     overflow-y: auto;
     .active {
-      background: ${props => props.theme.palette.secondary};
+      background: #055e68;
     }
   }
 `
