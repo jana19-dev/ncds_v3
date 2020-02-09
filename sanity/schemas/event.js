@@ -1,3 +1,5 @@
+import RichTextEditor from '../components/RichTextEditor'
+
 const event = {
   title: 'Events',
   name: 'event',
@@ -41,14 +43,9 @@ const event = {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Description',
+      type: 'string',
       name: 'description',
-      type: 'array',
-      of: [
-        {
-          type: 'block'
-        }
-      ]
+      inputComponent: RichTextEditor
     },
     {
       title: 'Image',

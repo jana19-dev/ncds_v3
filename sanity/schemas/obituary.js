@@ -1,3 +1,5 @@
+import RichTextEditor from '../components/RichTextEditor'
+
 const obituary = {
   title: 'Obituaries',
   name: 'obituary',
@@ -43,14 +45,9 @@ const obituary = {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Description',
+      type: 'string',
       name: 'description',
-      type: 'array',
-      of: [
-        {
-          type: 'block'
-        }
-      ]
+      inputComponent: RichTextEditor
     },
     {
       title: 'Image',

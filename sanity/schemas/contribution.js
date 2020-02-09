@@ -1,3 +1,5 @@
+import RichTextEditor from '../components/RichTextEditor'
+
 const contribution = {
   title: 'Contributions',
   name: 'contribution',
@@ -29,14 +31,9 @@ const contribution = {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Description',
+      type: 'string',
       name: 'description',
-      type: 'array',
-      of: [
-        {
-          type: 'block'
-        }
-      ]
+      inputComponent: RichTextEditor
     },
     {
       title: 'Images',
