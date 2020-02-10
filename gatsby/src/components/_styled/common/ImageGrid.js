@@ -25,10 +25,10 @@ const calcColumnCount = (total, minus = 0) => {
 export default styled.div`
   line-height: 0;
   column-count: ${props => calcColumnCount(props.count)};
-  column-gap: 0px;
+  column-gap: 10px;
   img {
-    width: 95% !important;
-    margin-bottom: 5%;
+    width: 100% !important;
+    margin-bottom: 10px;
     height: auto !important;
   }
   @media (max-width: 1200px) {
