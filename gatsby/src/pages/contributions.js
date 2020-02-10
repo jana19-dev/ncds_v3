@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import Card from '../components/_common/Card'
+import Card from '../components/_styled/common/Card'
 
 const Wrapper = styled.div`
   display: grid;
@@ -12,14 +13,51 @@ const Wrapper = styled.div`
   text-align: center;
 `
 
-const ContributionsPage = () => (
-  <Layout title='அபிவிருத்திகள்'>
-    <Wrapper>
-      <Card title='Card title here' imageSrc='https://picsum.photos/400/280.jpg' />
-      <Card title='Card title here' imageSrc='https://picsum.photos/400/280.jpg' />
-      <Card title='Card title here' imageSrc='https://picsum.photos/400/280.jpg' />
-    </Wrapper>
-  </Layout>
-)
+const ContributionsPage = ({ data }) => {
+  const { edges: contributions } = data.allSanityContribution
+
+  return (
+    <Layout title='அபிவிருத்திகள்'>
+      <Wrapper>
+        {contributions.map(({ node }) =>
+          <Card key={node._id} to={`/contributions/${node.slug.current}`}>
+            <h3>{node.title}</h3>
+            <img src={node.images[0].asset.fixed.src} alt={node.title} />
+            <p>{node.date}</p>
+          </Card>
+        )}
+      </Wrapper>
+    </Layout>
+  )
+}
 
 export default ContributionsPage
+
+export const query = graphql`
+  query AllContributions {
+    allSanityContribution(
+      sort: {
+        fields: [date]
+        order: DESC
+      }
+    ) {
+      edges {
+        node {
+          _id,
+          slug {
+            current
+          },
+          title,
+          date (formatString: "MMMM Do, YYYY"),
+          images {
+            asset {
+              fixed(width: 375, height: 250) {
+                ...GatsbySanityImageFixed
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

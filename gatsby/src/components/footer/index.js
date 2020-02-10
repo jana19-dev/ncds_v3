@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Wrapper from './styled/Wrapper'
-import Copyright from './styled/Copyright'
+import Wrapper from '../_styled/footer/Wrapper'
+import Copyright from '../_styled/footer/Copyright'
 
 import ImageFooter from './images/ImgFooter'
 
