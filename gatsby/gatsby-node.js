@@ -14,6 +14,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   current
                 },
                 title,
+                date (formatString: "MMMM Do, YYYY"),
                 description,
                 images {
                   asset {

@@ -12,9 +12,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0px;
     background: ${props => props.theme.background.primary};
     color: ${props => props.theme.text.primary};
+    min-width: 320px;
     main {
       min-height: 80vh;
       padding: 20px;
+      text-align: center;
     }
   }
 `
@@ -25,8 +27,8 @@ const Layout = ({ title, children }) => {
   )
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
     window.localStorage.setItem('isDarkMode', !isDarkMode)
+    setIsDarkMode(!isDarkMode)
   }
 
   return (
