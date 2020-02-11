@@ -23,7 +23,9 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ title, children }) => {
   const [isDarkMode, setIsDarkMode] = useState(
-    window.localStorage.getItem('isDarkMode') === 'true'
+    (typeof window !== 'undefined')
+      ? window.localStorage.getItem('isDarkMode') === 'true'
+      : false
   )
 
   const toggleDarkMode = () => {
@@ -32,7 +34,7 @@ const Layout = ({ title, children }) => {
   }
 
   return (
-    <ThemeProvider theme={isDarkMode ? theme.dark : theme.light} isDarkMode>
+    <ThemeProvider theme={isDarkMode ? theme.dark : theme.light} isDarkMode={isDarkMode}>
       <GlobalStyle />
       <Seo title={title} />
       <Header title={title} toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
