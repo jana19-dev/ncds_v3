@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import ImageGrid from '../components/_styled/common/ImageGrid'
 
 export default ({ pageContext: contribution }) => {
-  console.log(contribution)
   const {
     title,
     date,
@@ -21,7 +20,7 @@ export default ({ pageContext: contribution }) => {
           <img
             key={idx}
             src={img.asset.url}
-            alt={`image ${idx + 1} of ${images.length}`}
+            alt={`${idx + 1} of ${images.length}`}
           />
         )}
       </ImageGrid>
