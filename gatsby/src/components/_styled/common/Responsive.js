@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  @media (max-width: 768px) {
+  @media (${props => props.theme.device.mobile}) {
     display: ${props => props.mobile ? 'inherit' : 'none'}
   }
-  @media (min-width: 769px) {
+  @media (${props => props.theme.device.desktop}) {
     display: ${props => props.desktop ? 'inherit' : 'none'}
   }
 `

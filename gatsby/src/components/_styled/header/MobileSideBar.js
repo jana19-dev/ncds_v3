@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  background: #0d2a31;
-  color: #ffffff;
+  background: ${props =>
+    props.theme.isDarkMode ? props.theme.color.darkTeal : props.theme.color.teal
+  };
+  color: ${props => props.theme.color.lightGrey};
   opacity: ${props => props.open ? 1 : 0};
   visibility: ${props => props.open ? 'visible' : 'hidden'};
   width: ${props => props.open ? '300px' : '0px'};
@@ -12,7 +14,7 @@ export default styled.div`
   z-index: 1;
   top: 0;
   left: 0;
-  @media (min-width: 769px) {
+  @media (${props => props.theme.device.desktop}) {
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
@@ -32,7 +34,7 @@ export default styled.div`
     height: 80vh;
     overflow-y: auto;
     .active {
-      background: #055e68;
+      background: ${props => props.theme.color.lightTeal};
     }
   }
 `

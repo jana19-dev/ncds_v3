@@ -1,22 +1,14 @@
 export default {
-  light: {
-    background: {
-      primary: '#faf9f9',
-      secondary: '#add2c9'
-    },
-    text: {
-      primary: '#343434',
-      secondary: '#5ea3a3'
-    }
+  color: {
+    teal: '#0d2a31',
+    darkTeal: '#081316',
+    lightTeal: '#055e68',
+    darkOrange: '#ff6a00',
+    lightGrey: '#d3d3d3',
+    darkGrey: '#333333'
   },
-  dark: {
-    background: {
-      primary: '#343434',
-      secondary: '#055e68'
-    },
-    text: {
-      primary: '#faf9f9',
-      secondary: '#62a388'
-    }
+  device: {
+    mobile: 'max-width: 768px',
+    desktop: 'min-width: 769px'
   }
 }

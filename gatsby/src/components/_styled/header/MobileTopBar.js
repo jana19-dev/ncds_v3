@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  background: #0d2a31;
-  color: #ffffff;
+  background: ${props => props.theme.color.teal};
+  color: ${props => props.theme.color.lightGrey};
   display: grid;
   grid-template-columns: auto 1fr;
   justify-items: center;
@@ -10,7 +10,7 @@ export default styled.div`
   opacity: 1;
   visibility: visible;
   height: 45px;
-  @media (min-width: 769px) {
+  @media (${props => props.theme.device.desktop}) {
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
@@ -24,7 +24,7 @@ export default styled.div`
     padding-right: 20px;
   }
   button {
-    color: #ffffff;
+    color: ${props => props.theme.color.lightGrey};
     background: none;
     border: none;
     font-size: larger;

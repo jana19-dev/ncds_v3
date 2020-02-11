@@ -10,8 +10,12 @@ import theme from '../utils/theme'
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0px;
-    background: ${props => props.theme.background.primary};
-    color: ${props => props.theme.text.primary};
+    background: ${props =>
+      props.theme.isDarkMode ? props.theme.color.darkTeal : props.theme.color.lightGrey
+    };
+    color: ${props =>
+      props.theme.isDarkMode ? props.theme.color.lightGrey : props.theme.color.darkTeal
+    };
     min-width: 320px;
     main {
       min-height: 80vh;
@@ -34,7 +38,7 @@ const Layout = ({ title, children }) => {
   }
 
   return (
-    <ThemeProvider theme={isDarkMode ? theme.dark : theme.light} isDarkMode={isDarkMode}>
+    <ThemeProvider theme={{ ...theme, isDarkMode }}>
       <GlobalStyle />
       <Seo title={title} />
       <Header title={title} toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />

@@ -2,8 +2,10 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 export default styled(Link)`
-  background: ${props => props.isDarkMode ? '#00796b' : '#00796b'};
-  color: #ffffff;
+  background: ${props =>
+    props.theme.isDarkMode ? props.theme.color.lightTeal : props.theme.color.teal
+  };
+  color: ${props => props.theme.color.lightGrey};
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -22,6 +24,6 @@ export default styled(Link)`
     height: 250px;
   }
   p {
-    color: #ffffff;
+    color: ${props => props.theme.color.lightGrey};
   }
 `

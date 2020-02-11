@@ -5,12 +5,12 @@ export default styled.footer`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
-  background: #333333;
+  background: ${props => props.theme.color.darkGrey};
   justify-items: center;
   .gatsby-image-wrapper {
     width: 500px;
   }
-  @media (max-width: 768px) {
+  @media (${props => props.theme.device.mobile}) {
     height: auto;
     grid-template-columns: 1fr;
     .gatsby-image-wrapper {

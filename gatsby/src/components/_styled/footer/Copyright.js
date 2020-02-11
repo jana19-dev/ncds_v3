@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export default styled.div`
-  color: #ffffff;
+  color: ${props => props.theme.color.lightGrey};
   display: grid;
   align-items: center;
   text-align: center;
