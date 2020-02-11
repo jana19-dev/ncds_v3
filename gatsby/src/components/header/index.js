@@ -45,48 +45,50 @@ const Header = ({ title, toggleDarkMode, isDarkMode }) => {
   const handleSideBarOutsideClick = e =>
     !sidebar.current.contains(e.target) && setIsSideBarOpen(false)
 
-  const renderNavLink = link => (
+  const renderNavLink = ({ page, label }, pathname) => (
     <NavLinkItem
-      key={link.page}
-      to={link.page}
+      key={page}
+      to={page}
       activeClassName='active'
+      partiallyActive={
+        page !== '/' && Boolean(pathname.match(new RegExp(`^${page}(/)?$`)))
+      }
     >
-      {link.label}
+      {label}
     </NavLinkItem>
   )
 
   return (
     <Location>
-      {({ location }) => {
-        return (
-          <header>
-            <DarkModeToggleButton onClick={toggleDarkMode}>
-              {isDarkMode ? <MoonIcon size={23} /> : <SunIcon size={23} />}
-            </DarkModeToggleButton>
+      {({ location }) => (
+        <header>
+          <DarkModeToggleButton onClick={toggleDarkMode}>
+            {isDarkMode ? <MoonIcon size={23} /> : <SunIcon size={23} />}
+          </DarkModeToggleButton>
 
-            <Responsive desktop> <ImageBannerDesktop /> </Responsive>
-            <Responsive mobile> <ImageBannerMobile /> </Responsive>
+          <Responsive desktop> <ImageBannerDesktop /> </Responsive>
+          <Responsive mobile> <ImageBannerMobile /> </Responsive>
 
-            <DesktopTopBar>
-              {links.map(renderNavLink)}
-            </DesktopTopBar>
+          <DesktopTopBar>
+            {links.map(link => renderNavLink(link, location.pathname))}
+          </DesktopTopBar>
 
-            <MobileTopBar>
-              <button onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
-                <MenuIcon size={25} />
-              </button>
-              <h1>{title}</h1>
-            </MobileTopBar>
+          <MobileTopBar>
+            <button onClick={() => setIsSideBarOpen(!isSideBarOpen)}>
+              <MenuIcon size={25} />
+            </button>
+            <h1>{title}</h1>
+          </MobileTopBar>
 
-            <MobileSideBar open={isSideBarOpen} ref={sidebar}>
-              <ImageLogo />
-              <div className='linksWrapper'> {links.map(renderNavLink)} </div>
-            </MobileSideBar>
-          </header>
-        )
-      }}
+          <MobileSideBar open={isSideBarOpen} ref={sidebar}>
+            <ImageLogo />
+            <div className='linksWrapper'>
+              {links.map(link => renderNavLink(link, location.pathname))}
+            </div>
+          </MobileSideBar>
+        </header>
+      )}
     </Location>
-
   )
 }
 
