@@ -24,3 +24,15 @@ services:
       - .env
     ports:
       - 127.0.0.1:8000:8000
+
+  gatsby-prod:
+    image: node:12
+    working_dir: /app
+    volumes:
+      - ./gatsby/:/app
+    user: 1000:1000
+    command: bash -c "yarn && yarn build && yarn serve"
+    env_file:
+      - .env
+    ports:
+      - 127.0.0.1:9000:9000
