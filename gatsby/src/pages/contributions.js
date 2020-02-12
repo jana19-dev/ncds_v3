@@ -8,7 +8,7 @@ import Card from '../components/_styled/common/Card'
 const Wrapper = styled.div`
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat(auto-fit, 375px);
+  grid-template-columns: repeat(auto-fit, 325px);
   justify-content: center;
   text-align: center;
 `
@@ -51,7 +51,7 @@ export const query = graphql`
           date (formatString: "MMMM Do, YYYY"),
           images {
             asset {
-              fixed(width: 375, height: 250) {
+              fixed(width: 325, height: 250) {
                 ...GatsbySanityImageFixed
               }
             }

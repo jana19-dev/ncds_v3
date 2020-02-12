@@ -1,20 +1,26 @@
 import styled from 'styled-components'
 
 export default styled.footer`
-  height: 100px;
+  background: ${props => props.theme.color.teal};
+  color: ${props => props.theme.color.lightGrey};
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-  background: ${props => props.theme.color.darkGrey};
+  padding: 10px 0px;
+  grid-template-columns: 3fr 2fr;
   justify-items: center;
-  .gatsby-image-wrapper {
-    width: 500px;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  margin: 0;
+  font-size: 15px;
+  p {
+    margin: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
   }
   @media (${props => props.theme.device.mobile}) {
-    height: auto;
     grid-template-columns: 1fr;
-    .gatsby-image-wrapper {
-      width: 100%;
-    }
+    grid-gap: 10px;
   }
 `

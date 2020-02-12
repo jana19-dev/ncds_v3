@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Location } from '@reach/router'
 
-import Responsive from '../_styled/common/Responsive'
+import Banner from '../_styled/header/Banner'
 import DesktopTopBar from '../_styled/header/DesktopTopBar'
 import MobileTopBar from '../_styled/header/MobileTopBar'
 import MobileSideBar from '../_styled/header/MobileSideBar'
@@ -13,9 +13,7 @@ import { Sun as SunIcon } from 'styled-icons/boxicons-solid/Sun'
 import { Moon as MoonIcon } from 'styled-icons/boxicons-solid/Moon'
 import { Menu as MenuIcon } from 'styled-icons/boxicons-regular/Menu'
 
-import ImageBannerDesktop from './images/ImgBannerDesktop'
-import ImageBannerMobile from './images/ImgBannerMobile'
-import ImageLogo from './images/ImgLogo'
+import Logo from '../_styled/header/Logo'
 
 const links = [
   { label: 'நயினாதீவு', page: '/' },
@@ -66,8 +64,13 @@ const Header = ({ title, toggleDarkMode, isDarkMode }) => {
             {isDarkMode ? <MoonIcon size={23} /> : <SunIcon size={23} />}
           </DarkModeToggleButton>
 
-          <Responsive desktop> <ImageBannerDesktop /> </Responsive>
-          <Responsive mobile> <ImageBannerMobile /> </Responsive>
+          <Banner>
+            <Logo />
+            <h1>
+              நயினாதீவு - கனேடியர் அபிவிருத்திச் சங்கம் <br />
+              Nainativu Canadian Development Society
+            </h1>
+          </Banner>
 
           <DesktopTopBar>
             {links.map(link => renderNavLink(link, location.pathname))}
@@ -81,7 +84,7 @@ const Header = ({ title, toggleDarkMode, isDarkMode }) => {
           </MobileTopBar>
 
           <MobileSideBar open={isSideBarOpen} ref={sidebar}>
-            <ImageLogo />
+            <Logo />
             <div className='linksWrapper'>
               {links.map(link => renderNavLink(link, location.pathname))}
             </div>
