@@ -8,7 +8,15 @@ import Footer from './footer'
 import theme from '../utils/theme'
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Hind Madurai';
+    unicode-range: U+0964-0965, U+0B82-0BFA, U+200C-200D, U+20B9, U+25CC;
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
   body {
+    font-family: 'Hind Madurai', Arial, sans-serif;
     margin: 0px;
     background: ${props =>
       props.theme.isDarkMode ? props.theme.color.darkTeal : props.theme.color.lightGrey
